@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class MetryNaCaleiLokcie {
@@ -50,6 +51,7 @@ public class MetryNaCaleiLokcie {
                     //w polu wynik wyświetlamy komunikat o błedzie 
                     wynikStr = "Metry to liczba rzeczywista! Popraw wartość!";
                     wynik.setText(wynikStr);
+                    wynik.setForeground(Color.RED);
                     //czyścimy źle wprowadzoną wartość w polu metry 
                     metry.setText("");
                     //ustawiamy kursor (fokus) w polu metry 
@@ -62,6 +64,7 @@ public class MetryNaCaleiLokcie {
                 //sprawdzamy który przycisk został wybrany 
                 //e.getActionCommand() odczytuje napis na przycisku 
                 String polecenie = e.getActionCommand();
+                wynik.setForeground(Color.BLACK);
                 //jezeli wybrano przycisk z napisem "Przelicz na cale" 
                 if (polecenie.equals("Przelicz na cale")) {
                     float cale = metryFloat * 39.3701F; //przeliczmy na cale 
@@ -69,6 +72,7 @@ public class MetryNaCaleiLokcie {
                     wynikStr = String.format("%.2f metrów to %.2f cali", metryFloat, cale);
                     //prezentujemy wynik
                     wynik.setText(wynikStr);
+
                 }
                 //jezeli wybrano przycisk z napisem "Przelicz na łokcie" 
                 if (polecenie.equals("Przelicz na łokcie")) {
